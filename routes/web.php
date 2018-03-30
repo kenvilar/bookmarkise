@@ -18,4 +18,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'BookmarksController@index');
-Route::post('/addBookmark', 'BookmarksController@addBookmark');
+Route::post('/add', ['as' => 'bookmark.add', 'uses' => 'BookmarksController@addBookmark']);
