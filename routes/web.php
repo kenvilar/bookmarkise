@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'BookmarksController@index')->name('home');
+Route::get('/home', 'BookmarksController@index');
+Route::post('/addBookmark', 'BookmarksController@addBookmark');
