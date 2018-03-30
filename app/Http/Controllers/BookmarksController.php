@@ -11,9 +11,14 @@ class BookmarksController extends Controller
 	{
 		$this->middleware('auth');
 	}
-	
+
 	public function index()
 	{
 		return view('home');
+	}
+
+	public function addBookmark(Request $request)
+	{
+		return 123;
 	}
 }
