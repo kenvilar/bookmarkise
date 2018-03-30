@@ -19,6 +19,9 @@ class BookmarksController extends Controller
 
 	public function addBookmark(Request $request)
 	{
-		return 123;
+		$this->validate($request, [
+			'name' => 'required',
+			'url' => 'required',
+		]);
 	}
 }
