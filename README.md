@@ -3,7 +3,7 @@
 Laravel + PostgreSQL
 
 ## Instructions
-> Go to the `php.ini` file where your configuration file path is and uncomment these two lines
+> Go to the `php.ini` file where your configuration file path is and uncomment/enabled these two lines
 ```sh
 # for Mac
 ;extension=php_pdo_pgsql.so
