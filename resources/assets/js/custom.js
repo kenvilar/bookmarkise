@@ -1,20 +1,14 @@
 let axios = require('axios');
 
-$('document').ready(function() {
+$('body').on('click', '.dom-delete-bookmark', domDeleteBookmark);
 
-    $('body').on('click', '.dom-delete-bookmark', domDeleteBookmark);
+function domDeleteBookmark() {
+    let id = $(this).data('id');
 
-    function domDeleteBookmark(e) {
-        e.preventDefault();
-        let id = $(this).data('id');
-
-        axios.delete(
-            '/bookmarks/' + id,
-        ).then(function(response) {
-            window.location.reload();
-        }).catch(function (error) {
-            console.log(error);
-        });
-    }
-
-});
+    axios.delete('/bookmarks/' + id,
+    ).then(function(response) {
+        window.location.reload();
+    }).catch(function (error) {
+        console.log(error);
+    });
+}
