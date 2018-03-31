@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bookmark;
 use Illuminate\Http\Request;
 
 class BookmarksController extends Controller
@@ -23,5 +24,13 @@ class BookmarksController extends Controller
 			'name' => 'required',
 			'url' => 'required',
 		]);
+
+		$bookmark = new Bookmark;
+		$bookmark->name = $request->input('name');
+		$bookmark->url = $request->input('url');
+		$bookmark->description = $request->input('description');
+		$bookmark->save();
+
+		return view('home')->with('success', 'Created bookmark successfully!');
 	}
 }
