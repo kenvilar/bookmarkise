@@ -32,6 +32,6 @@ class BookmarksController extends Controller
 		$bookmark->description = $request->input('description');
 		$bookmark->save();
 
-		return view('home')->with('success', 'Created bookmark successfully!');
+		return redirect('home')->with('success', 'Created bookmark successfully!');
 	}
 }
