@@ -49,7 +49,7 @@
                                 <li class="list-group-item">
                                     <a href="{{ $bookmark->url }}" target="_blank">{{ $bookmark->name }}</a>
                                     <span class="col-form-label-sm">{{ $bookmark->description }}</span>
-                                    <button class="btn btn-danger float-right" type="button">
+                                    <button data-id="{{ $bookmark->id }}" class="dom-delete-bookmark btn btn-danger float-right" type="button">
                                         <i class="fa fa-trash-alt"></i> Delete
                                     </button>
                                 </li>

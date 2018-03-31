@@ -36,4 +36,11 @@ class BookmarksController extends Controller
 
 		return redirect('home')->with('success', 'Created bookmark successfully!');
 	}
+
+	public function destroy($id) {
+		$bookmark = Bookmark::query()->find($id)->where('user_id', auth()->user()->id);
+		$bookmark->delete();
+
+		return redirect('home')-with('success', 'Deleted bookmark successfully!');
+	}
 }

@@ -35873,9 +35873,25 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 36 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-alert(1);
+var axios = __webpack_require__(17);
+
+$('document').ready(function () {
+
+    $('body').on('click', '.dom-delete-bookmark', domDeleteBookmark);
+
+    function domDeleteBookmark(e) {
+        e.preventDefault();
+        var id = $(this).data('id');
+
+        axios.delete('/bookmarks/' + id).then(function (response) {
+            window.location.reload();
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
+});
 
 /***/ }),
 /* 37 */
