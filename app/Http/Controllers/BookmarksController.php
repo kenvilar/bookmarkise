@@ -15,7 +15,9 @@ class BookmarksController extends Controller
 
 	public function index()
 	{
-		return view('home');
+		$bookmarks = Bookmark::all()->where('user_id', auth()->user()->id);
+
+		return view('home')->with(['bookmarks' => $bookmarks]);
 	}
 
 	public function addBookmark(Request $request)

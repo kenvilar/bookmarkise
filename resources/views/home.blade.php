@@ -39,6 +39,22 @@
                     </div>
                 </div>
             </div>
+
+            <div class="container">
+                <h3>Bookmarks List</h3>
+                <div>
+                    @if(count($bookmarks) > 0)
+                        @foreach($bookmarks as $bookmark)
+                            <ul class="list-group">
+                                <li class="list-group-item">{{ $bookmark->name }}</li>
+                                <li class="list-group-item">{{ $bookmark->url }}</li>
+                                <li class="list-group-item">{{ $bookmark->description }}</li>
+                            </ul>
+                            <br>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
         </div>
     </div>
 </div>
