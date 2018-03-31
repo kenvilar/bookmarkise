@@ -26,6 +26,7 @@ class BookmarksController extends Controller
 		]);
 
 		$bookmark = new Bookmark;
+		$bookmark->user_id = auth()->user()->id;
 		$bookmark->name = $request->input('name');
 		$bookmark->url = $request->input('url');
 		$bookmark->description = $request->input('description');
